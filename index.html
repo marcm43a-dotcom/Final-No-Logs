@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="index.css" />
+    <title>GROUP 9 POS</title>
+</head>
+<body>
+    <div class="pos-main-container">
+        <div id="pos-inventory"></div>
+        <div class="pos-accounting">
+            <div class="pos-receipt-columns">
+                <div class="pos-receipt-column-description">DESCRIPTION</div>
+                <div class="pos-receipt-column-unitprice">UNIT-PRICE</div>
+                <div class="pos-receipt-column-quantity">QNT</div>
+                <div class="pos-receipt-column-price">PRICE</div>
+            </div>
+            <div id="pos-receipt-list"></div>
+            <div id="pos-receipt-summary"></div>
+            <div class="pos-receipt-buttons">
+                <button class="pos-purchase">PURCHASE</button>
+                <button class="pos-login"></button>
+            </div>
+            <div id="pos-admin-access-logs"></div>
+        </div>
+    </div>
+    <script src="printer.js"></script>
+</body>
+</html>

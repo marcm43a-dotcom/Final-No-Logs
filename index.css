@@ -1,0 +1,455 @@
+* {
+    font-family: monospace;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+    outline: none;
+
+    margin: 0px;
+    padding: 0px;
+    gap: 0px;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background: url("images/website-background.jpg") center center/cover fixed;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* POS MAIN CONTAINER */
+.pos-main-container {
+    width: calc(100vw - 4px);
+    height: calc(100vh - 4px);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 4px;
+    padding: 4px;
+}
+
+
+
+/* POS INVENTORY */
+#pos-inventory {
+    width: 208px;
+    height: 616px;
+    border-radius: 12px;
+    background: rgba(33, 0, 0, 0.5);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+
+    gap: 4px;
+    padding: 4px;
+
+    overflow-y: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: both mandatory;
+}
+@media (min-width: 898px) and (max-width: 1101px) {
+    #pos-inventory {
+        width: 412px;
+    }
+}
+@media (min-width: 1102px) and (max-width: 1305px) {
+    #pos-inventory {
+        width: 616px;
+    }
+}
+@media (min-width: 1306px) {
+    #pos-inventory {
+        width: 820px;
+    }
+}
+
+
+
+/* POS INVENTORY ITEM-SLOT, ITEM AND COMPONENTS */
+/* POS ITEM */
+.pos-inventory-slot {
+    width: 200px;
+    height: 200px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-margin-top: 4px;
+}
+.pos-inventory-slot:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+/* POS ITEM FRAME */
+.pos-item-frame {
+    width: 200px;
+    height: 168px;
+    border-radius: 12px 12px 0px 0px;
+    background: linear-gradient(to bottom, rgb(95, 34, 10, 0.75), rgb(255, 174, 108, 0.75));
+    border: 4px solid rgb(255, 174, 108, 0.75);
+}
+/* POS ITEM FRAME COMPONENT */
+.pos-item-image {
+    width: 192px;
+    height: 160px;
+    border-radius: 8px 8px 0px 0px;
+    background: center/cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.pos-item-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(33, 33, 33, 0.75);
+}
+.pos-item-stock {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(33, 33, 33, 0.75);
+}
+/* POS ITEM PRICE */
+.pos-item-price {
+    width: 200px;
+    height: 32px;
+    border-radius: 0px 0px 12px 12px;
+    background: linear-gradient(to bottom, rgb(82, 58, 102, 0.75), rgb(112, 84, 136, 0.75));
+    border: 4px solid rgb(112, 84, 136, 0.75);
+
+    display: flex;
+    align-items: center;
+}
+/* POS ITEM PRICE COMPONENT */
+.pos-item-price-icon {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(222, 222, 222, 0.75);
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pos-item-price-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(222, 222, 222, 0.75);
+
+    width: 120px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+}
+.pos-item-price-listbtn {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(222, 222, 222, 0.75);
+
+    width: 48px;
+    height: 24px;
+    border-radius: 8px 0px 8px 0px;
+    background: linear-gradient(to bottom, rgb(255, 174, 108, 0.75), rgb(145, 57, 23, 0.75));
+    border: 2px solid rgb(255, 174, 108, 0.75);
+}
+.pos-item-price-listbtn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+
+
+/* POS ACCOUNTING */
+.pos-accounting {
+    width: 470px;
+    height: 616px;
+    border-radius: 12px;
+    background: rgba(33, 0, 0, 0.75);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+    padding: 4px;
+}
+
+
+
+/* POS RECEIPT COLUMNS */
+.pos-receipt-columns {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(222, 222, 222, 0.75);
+
+    width: 462px;
+    height: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+}
+/* POS LISTED DESCRIPTION */
+.pos-receipt-column-description {
+    width: 200px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+}
+/* POS LISTED UNIT PRICE */
+.pos-receipt-column-unitprice {
+    width: 102px;
+    height: 20px;
+    
+    display: flex;
+    justify-content: center;
+}
+/* POS LISTED QUANTITY */
+.pos-receipt-column-quantity {
+    width: 68px;
+    height: 20px;
+    
+    display: flex;
+    justify-content: center;
+}
+/* POS LISTED PRICE */
+.pos-receipt-column-price {
+    width: 92px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* POS RECEIPT LIST */
+#pos-receipt-list {
+    width: 462px;
+    height: 356px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+    
+    overflow-y: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+
+
+/* POS LISTED ITEM */
+.pos-listed-item {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(222, 222, 222, 0.75);
+
+    width: 462px;
+    height: 24px;
+    border-radius: 24px;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+}
+/* POS LISTED DESCRIPTION */
+.pos-listed-item-description {
+    width: 200px;
+    height: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* POS LISTED UNIT PRICE */
+.pos-listed-item-unitprice {
+    width: 102px;
+    height: 24px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* POS LISTED QUANTITY */
+.pos-listed-item-quantity {
+    width: 68px;
+    height: 24px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pos-listed-item-quantity-value {
+    width: 24px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pos-listed-item-quantity-addbtn {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(33, 33, 33, 0.75);
+    
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: rgba(222, 222, 222, 0.5);
+    border: 2px solid rgba(222, 222, 222, 0.5);
+
+    display: flex;
+    justify-content: center;
+}
+.pos-listed-item-quantity-subbtn {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(33, 33, 33, 0.75);
+    
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: rgba(222, 222, 222, 0.5);
+    border: 2px solid rgba(222, 222, 222, 0.5);
+
+    display: flex;
+    justify-content: center;
+}
+.pos-listed-item-quantity-addbtn:hover {
+    cursor: pointer;
+    background: rgba(222, 222, 222, 0.75);
+    border: 2px solid rgb(255, 255, 255);
+}
+.pos-listed-item-quantity-subbtn:hover {
+    cursor: pointer;
+    background: rgba(222, 222, 222, 0.75);
+    border: 2px solid rgb(255, 255, 255);
+}
+/* POS LISTED PRICE */
+.pos-listed-item-price {
+    width: 92px;
+    height: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* POS RECEIPT SUMMARY */
+#pos-receipt-summary {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(222, 222, 222, 0.75);
+
+    width: 462px;
+    height: 174px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pos-summary-name {
+    width: 440px;
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+}
+.pos-summary-value {
+    width: 225px;
+    height: 22px;
+    display: flex;
+    justify-content: end;
+}
+
+
+
+/* POS RECEIPT BUTTONS */
+.pos-receipt-buttons {
+    width: 462px;
+    height: 48px;
+    display: flex;
+    align-content: center;
+    gap: 4px;
+}
+.pos-purchase {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(222, 222, 222, 0.75);
+
+    width: 410px;
+    height: 48px;
+    border-radius: 48px;
+    background: rgba(255, 197, 72, 0.5);
+}
+.pos-purchase:hover {
+    background: rgba(255, 197, 72, 0.75);
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: 0.2s;
+}
+.pos-login {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background: url("images/icons/settings.jpg") center/cover rgba(0, 0, 0, 0.5);
+}
+.pos-login:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.pos-receipt-summary {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(222, 222, 222, 0.75);
+
+    width: 462px;
+    height: 128px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*
+#pos-admin-access-logs {
+    width: 462px;
+    height: 400px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+    
+    overflow-y: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+*/
